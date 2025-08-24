@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        h1, h2, h3, h4{
+            text-align: center;
+        }
+
+        table{
+            border: 2px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+        }
+
+        td, th, tr{
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            background-color: gray;
+            color: white;
+        }
+        
+        #titulo{
+            padding: 10px 5px 10px 5px;
+            font-size: 25px;
+            font-family: sans-serif;
+            background-color: bisque;
+            color: black;
+        }
+
+        p{
+            margin-left: 40vh;
+            margin-right: 40vh;
+            text-align: center;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>INSTITUTO FEDERAL DO TRIÂNGULO MINEIRO</h1>
+    <h2>ANÁLISE E DESENVOLVIMENTO DE SISTEMAS (02/2025)</h2>
+    <h3>Script para Web</h3>
+    <h4>Discente: Lucas de Souza Araujo</h4>
+    <h4>Atividade 1: Faça uma função que receba por parâmetro um vetor de números e calcule e retorne a soma de todos os elementos do vetor.</h4>
+    <table id="Tabela">
+        <tr>
+            <th colspan="6" id="titulo">Função Soma</th>
+        </tr>
+        <tr>
+            <th colspan="5"" id="titulo">Input</th>
+            <th id="titulo">Output</th>
+        </tr>
+        <tr id="entrada_saida"></tr>
+    </table>
+    <p>
+        Obs.: Entrei com um vetor no qual há 5 números quaisquer e pertencem à coluna de entrada "Input". O resultado da soma dos números os quais estão no vetor encontrasse na coluna entitutalada "Output" na cor <i>lighblue.</i>
+    </p>
+    <script>
+        var vetor_num=[3.5,7.0,8.2,9.2,6.7,0.0];
+        var impressao="";
+        var i=0;
+
+        function soma(vetor_num)
+        {
+            for(i=0; i < 5; i++)
+            {
+                vetor_num[5]+=vetor_num[i];
+            }
+            return vetor_num[5];
+        }
+
+        for(i=0; i < 5; i++)
+        {
+
+            impressao="<tr><td>" + vetor_num[i] + "</td></tr>";
+            document.getElementById("entrada_saida").innerHTML+=impressao;
+            if(i==4)
+            {
+                impressao="<tr><td style='color: lightblue'>" + soma(vetor_num) + "</td></tr>";
+                document.getElementById("entrada_saida").innerHTML+=impressao;
+            }
+        }
+
+    </script>
+</body>
+</html>
